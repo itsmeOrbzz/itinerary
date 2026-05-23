@@ -4,10 +4,10 @@ const urlsToCache = [
   './index.html',
   './manifest.json',
   './assets/sg_gardens.png',
-  './assets/sg_uss.png',
-  './assets/kl_batu.png',
-  './assets/kl_towers.png',
-  './assets/kl_food.png',
+  './assets/sg_uss.jpg',
+  './assets/kl_batu.jpg',
+  './assets/kl_towers.jpg',
+  './assets/kl_food.jpg',
   'https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap'
 ];
 
@@ -29,3 +29,4 @@ self.addEventListener('fetch', event => {
       })
   );
 });
+
