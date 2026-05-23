@@ -318,6 +318,16 @@
             opacity: 0.7;
         }
 
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
         .info-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -914,6 +924,26 @@
                         behavior: 'smooth'
                     });
                 });
+            });
+
+            // Scroll Animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.timeline-item, .info-card').forEach(el => {
+                el.classList.add('scroll-reveal');
+                observer.observe(el);
             });
         });
     </script>
