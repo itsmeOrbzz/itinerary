@@ -448,6 +448,7 @@
                     <button class="copy-btn" onclick="copyToClipboard('City Central Hotel, Kuala Lumpur')" title="Copy address for Grab">📋</button>
                 </span>
             </div>
+            <div class="weather-widgets" id="weather-widgets" style="display: none; justify-content: center; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap;"></div>
         </header>
 
         <nav class="glass-panel">
@@ -828,7 +829,45 @@
             });
         }
 
+        async function fetchWeather() {
+            try {
+                const [sgRes, klRes] = await Promise.all([
+                    fetch('https://api.open-meteo.com/v1/forecast?latitude=1.2897&longitude=103.8501&current_weather=true'),
+                    fetch('https://api.open-meteo.com/v1/forecast?latitude=3.1390&longitude=101.6869&current_weather=true')
+                ]);
+                const sgData = await sgRes.json();
+                const klData = await klRes.json();
+
+                const weatherContainer = document.getElementById('weather-widgets');
+                
+                function getWeatherEmoji(code) {
+                    if(code <= 3) return '🌤️';
+                    if(code <= 48) return '🌫️';
+                    if(code <= 67) return '🌧️';
+                    if(code <= 77) return '❄️';
+                    if(code <= 82) return '🌦️';
+                    if(code <= 99) return '⛈️';
+                    return '🌡️';
+                }
+
+                weatherContainer.innerHTML = `
+                    <div class="badge" style="background: rgba(129, 140, 248, 0.1); border-color: rgba(129, 140, 248, 0.3);">
+                        <span style="opacity: 0.8; margin-right: 0.25rem;">🇸🇬 SG:</span> 
+                        ${sgData.current_weather.temperature}°C ${getWeatherEmoji(sgData.current_weather.weathercode)}
+                    </div>
+                    <div class="badge" style="background: rgba(234, 179, 8, 0.1); border-color: rgba(234, 179, 8, 0.3);">
+                        <span style="opacity: 0.8; margin-right: 0.25rem;">🇲🇾 KL:</span> 
+                        ${klData.current_weather.temperature}°C ${getWeatherEmoji(klData.current_weather.weathercode)}
+                    </div>
+                `;
+                weatherContainer.style.display = 'flex';
+            } catch(e) {
+                console.log('Weather fetch failed', e);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
+            fetchWeather();
             const navBtns = document.querySelectorAll('.nav-btn');
             const sections = document.querySelectorAll('.day-section');
 
