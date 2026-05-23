@@ -179,7 +179,7 @@
             box-shadow: 0 4px 15px rgba(129, 140, 248, 0.4);
         }
 
-        /* New Copy and Map Link Styles */
+        /* Copy and Map Link Styles */
         .copy-btn {
             background: none;
             border: none;
@@ -309,13 +309,24 @@
             color: var(--text-muted);
             font-size: 0.95rem;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 0.5rem;
+            flex-direction: column;
         }
-        .notes::before {
-            content: 'ℹ️';
-            font-size: 0.8rem;
-            opacity: 0.7;
+        
+        .notes-list {
+            list-style: none;
+            padding-left: 0.5rem;
+            border-left: 2px solid rgba(129, 140, 248, 0.3);
+            margin-top: 0.5rem;
+        }
+        .notes-list li {
+            margin-bottom: 0.25rem;
+            font-size: 0.9rem;
+        }
+        .notes-list li strong {
+            color: #fff;
+            font-weight: 500;
         }
 
         .scroll-reveal {
@@ -479,79 +490,87 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <span class="time">01:55 – 05:30</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Changi+Airport+Singapore" target="_blank" class="map-link">Flight Cebu → Singapore</a></h3>
-                        <p class="notes">Arrival at Changi Airport</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Changi+Airport+Singapore" target="_blank" class="map-link">Flight Cebu to Singapore</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">05:30 – 07:00</span>
-                        <h3 class="activity">Immigration & Buy eSIM</h3>
-                        <p class="notes">Luggage claim, consider SG tourist eSIM</p>
+                        <h3 class="activity">Get Luggage. Pass Immigration, Buy eSim</h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">07:00 – 08:00</span>
                         <h3 class="activity"><a href="https://maps.google.com/?q=Changi+Airport+Terminal+1+Singapore" target="_blank" class="map-link">Breakfast</a></h3>
-                        <p class="notes">Optional luggage storage at T1 Level 1</p>
+                        <div class="notes">
+                            <p><em>Optional: Leave luggage in Level 1 T1 for hands-free walking</em></p>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <span class="time">08:00 – 09:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=HSBC+Rain+Vortex+Jewel+Changi+Singapore" target="_blank" class="map-link">HSBC Rain Vortex</a></h3>
-                        <p class="notes">Forest Valley + The Wonderfall. Explore multiple levels</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=HSBC+Rain+Vortex+Jewel+Changi+Singapore" target="_blank" class="map-link">HSBC Rain Vortex & Forest Valley & The Wonderfall</a></h3>
+                        <div class="notes">
+                            <p><em>Just walk up/down the levels for different waterfall views.</em></p>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <span class="time">09:00 – 10:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Wink+Hotel+Jalan+Besar+Singapore" target="_blank" class="map-link">Grab to Wink @ Jalan Besar</a></h3>
-                        <p class="notes">Leave luggage</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Wink+Hotel+Jalan+Besar+Singapore" target="_blank" class="map-link">Grab to Wink @ Jalan Besar and Leave Luggage at Hotel</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">10:00 – 12:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Sultan+Mosque+Singapore" target="_blank" class="map-link">Kampong Glam + Haji Lane</a></h3>
-                        <p class="notes">Walkable cultural area, Sultan Mosque</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Sultan+Mosque+Singapore" target="_blank" class="map-link">Kampong Glam + Haji Lane, Sultan Mosque</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">12:00 – 13:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Bugis+Singapore" target="_blank" class="map-link">Lunch at Bugis</a></h3>
-                        <p class="notes">Zam Zam or Alaturka recommended</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Bugis+Singapore" target="_blank" class="map-link">Lunch at Bugis / Zamzam Restaurant / Alaturka Moussaka</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">13:00 – 14:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Little+India+Singapore" target="_blank" class="map-link">Little India Tour</a></h3>
-                        <p class="notes">Souvenir shops + temple visit</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Little+India+Singapore" target="_blank" class="map-link">Little India + Visit Souvenir Shop</a></h3>
+                        <div class="notes">
+                            <p>Includes Sri Veeramakaliamman Temple, Former House of Tan Teng Niah</p>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <span class="time">14:00 – 15:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Wink+Hotel+Jalan+Besar+Singapore" target="_blank" class="map-link">Check-in at Wink Hotel</a></h3>
-                        <p class="notes">Rest</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Wink+Hotel+Jalan+Besar+Singapore" target="_blank" class="map-link">Check in at Wink</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">15:00 – 16:00</span>
-                        <h3 class="activity">Refresh / Downtime</h3>
-                        <p class="notes">Recharge</p>
+                        <h3 class="activity">Rest and Refresh</h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">16:00 – 17:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Bayfront+MRT+Station+Singapore" target="_blank" class="map-link">MRT to Bayfront Station</a></h3>
-                        <p class="notes">Going to Gardens by the Bay</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Bayfront+MRT+Station+Singapore" target="_blank" class="map-link">Subway Train (Jalan Besar Sta. to Bayfront Sta.) to Gardens by the Bay</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">17:00 – 19:00</span>
                         <h3 class="activity"><a href="https://maps.google.com/?q=Gardens+by+the+Bay+Singapore" target="_blank" class="map-link">Gardens by the Bay Tour</a></h3>
-                        <p class="notes">Free + optional paid attractions</p>
+                        <div class="notes">
+                            <ul class="notes-list">
+                                <li><strong>Tour [Free]:</strong> Supertree Grove, Heritage Gardens, World of Plants, Dragonfly & Kingfisher Lakes</li>
+                                <li><strong>Tour [Paid]:</strong> Cloud Forest, Flower Dome, Floral Fantasy, Supertree Observatory, OCBC Skyway</li>
+                                <li><strong>Others:</strong> Helix Bridge, Singapore Flyer, Art Science Museum</li>
+                            </ul>
+                        </div>
                         <img src="assets/sg_gardens.jpg" alt="Gardens by the Bay" class="timeline-img" loading="lazy">
                     </div>
                     <div class="timeline-item">
                         <span class="time">19:00 – 20:00</span>
-                        <h3 class="activity">Garden Rhapsody Light Show</h3>
-                        <p class="notes">Main show at 19:45 and 20:45</p>
+                        <h3 class="activity">Garden Rhapsody light show at Gardens by the Bay</h3>
+                        <div class="notes">
+                            <ul class="notes-list">
+                                <li><em>Shows run daily at 7:45 PM and 8:45 PM and are free.</em></li>
+                                <li><em>For elevated views, use the OCBC Skyway (ticketed) or look for spots around the surrounding lawn and the "World of Plants" area.</em></li>
+                                <li><em>Supertree Grove Lawn (Free): Lie down or sit on the ground directly beneath the trees for the most immersive 360-degree view.</em></li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <span class="time">20:00 – 21:00</span>
                         <h3 class="activity"><a href="https://maps.google.com/?q=Marina+Bay+Sands+Singapore" target="_blank" class="map-link">Dinner at Marina Bay Sands</a></h3>
-                        <p class="notes">Explore mall and dining</p>
                     </div>
                     <div class="timeline-item">
                         <span class="time">21:00 – 22:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Wink+Hotel+Jalan+Besar+Singapore" target="_blank" class="map-link">MRT back to Wink</a></h3>
-                        <p class="notes">End of Day 1</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Wink+Hotel+Jalan+Besar+Singapore" target="_blank" class="map-link">Subway Train to Wink</a></h3>
                     </div>
                 </div>
             </section>
@@ -565,42 +584,40 @@
                     <div class="timeline-item">
                         <span class="time">07:00 – 08:00</span>
                         <h3 class="activity">Breakfast and Preparation</h3>
-                        <p class="notes">Start early</p>
                     </div>
                     <div class="timeline-item">
                         <span class="time">08:00 – 09:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Merlion+Park+Singapore" target="_blank" class="map-link">Merlion Park</a></h3>
-                        <p class="notes">Marina Bay Sands photos</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Merlion+Park+Singapore" target="_blank" class="map-link">Merlion Park (Marina Bay Sands Picture)</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">09:00 – 12:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=National+Museum+Singapore" target="_blank" class="map-link">Heritage Tour</a></h3>
-                        <p class="notes">National Museum + Fort Canning + National Gallery</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=National+Museum+Singapore" target="_blank" class="map-link">National Museum, Fort Canning Park, and National Gallery</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">12:00 – 14:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Clarke+Quay+Singapore" target="_blank" class="map-link">Lunch at Clarke Quay</a></h3>
-                        <p class="notes">Singapore River area</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Clarke+Quay+Singapore" target="_blank" class="map-link">Lunch Clarke Quay Area (Singapore River)</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">14:00 – 17:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Chinatown+Singapore" target="_blank" class="map-link">Chinatown Tour</a></h3>
-                        <p class="notes">Temples + shopping</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Chinatown+Singapore" target="_blank" class="map-link">Tour around Chinatown</a></h3>
+                        <div class="notes">
+                            <p>Tian Hock Keng Temple, Buddha Tooth Relic Temple, Jewellery Factory</p>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <span class="time">17:00 – 18:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Maxwell+Food+Centre+Singapore" target="_blank" class="map-link">Dinner at Maxwell Food Centre</a></h3>
-                        <p class="notes">Famous hawker center</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Maxwell+Food+Centre+Singapore" target="_blank" class="map-link">Dinner (Maxwell Food in Chinatown)</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">18:00 – 20:00</span>
                         <h3 class="activity"><a href="https://maps.google.com/?q=CapitaSpring+Sky+Garden+Singapore" target="_blank" class="map-link">CapitaSpring Sky Garden</a></h3>
-                        <p class="notes">Strict 18:00 admission</p>
+                        <div class="notes">
+                            <p><em>Strict 18:00 admission</em></p>
+                        </div>
                     </div>
                     <div class="timeline-item">
                         <span class="time">20:00 – 21:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Wink+Hotel+Jalan+Besar+Singapore" target="_blank" class="map-link">Return to Wink</a></h3>
-                        <p class="notes">End of Day 2</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Wink+Hotel+Jalan+Besar+Singapore" target="_blank" class="map-link">Go back to WINK</a></h3>
                     </div>
                 </div>
             </section>
@@ -613,39 +630,32 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <span class="time">07:00 – 08:00</span>
-                        <h3 class="activity">Breakfast + Early Walk</h3>
-                        <p class="notes">Prepare luggage</p>
+                        <h3 class="activity">Breakfast, Early Walk</h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">08:00 – 09:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Wink+Hotel+Jalan+Besar+Singapore" target="_blank" class="map-link">Check-out from Wink</a></h3>
-                        <p class="notes">Final SG hotel checkout</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Wink+Hotel+Jalan+Besar+Singapore" target="_blank" class="map-link">Check out Wink</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">09:00 – 09:30</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=HarbourFront+Centre+Singapore" target="_blank" class="map-link">Grab to HarbourFront Centre</a></h3>
-                        <p class="notes">Leave luggage</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=HarbourFront+Centre+Singapore" target="_blank" class="map-link">Grab to HarbourFront Center, Leave luggage</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">09:30 – 11:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=VivoCity+Singapore" target="_blank" class="map-link">VivoCity + Early Lunch</a></h3>
-                        <p class="notes">Nearby before USS</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=VivoCity+Singapore" target="_blank" class="map-link">Vivo City and Early Lunch</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">11:00 – 15:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Universal+Studios+Singapore" target="_blank" class="map-link">Universal Studios Singapore</a></h3>
-                        <p class="notes">Main attractions</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Universal+Studios+Singapore" target="_blank" class="map-link">Universal Studio Singapore</a></h3>
                         <img src="assets/sg_uss.jpg" alt="Universal Studios" class="timeline-img" loading="lazy">
                     </div>
                     <div class="timeline-item">
                         <span class="time">15:00 – 16:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=HarbourFront+Centre+Singapore" target="_blank" class="map-link">Return to HarbourFront</a></h3>
-                        <p class="notes">Wait for bus</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=HarbourFront+Centre+Singapore" target="_blank" class="map-link">Back to HarbourFront Center, Wait Bus</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">16:00 – 23:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=City+Central+Hotel+Kuala+Lumpur" target="_blank" class="map-link">Singapore → Kuala Lumpur</a></h3>
-                        <p class="notes">Land travel</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=City+Central+Hotel+Kuala+Lumpur" target="_blank" class="map-link">SG to KL</a></h3>
                     </div>
                 </div>
             </section>
@@ -658,39 +668,42 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <span class="time">07:00 – 08:00</span>
-                        <h3 class="activity">Breakfast + Morning Walk</h3>
-                        <p class="notes">Prepare for long day</p>
+                        <h3 class="activity">Breakfast, Morning Walk</h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">08:00 – 18:00</span>
                         <h3 class="activity"><a href="https://maps.google.com/?q=Batu+Caves+Kuala+Lumpur" target="_blank" class="map-link">Car Charter Tour</a></h3>
-                        <p class="notes">Batu Caves, Genting, museums, temples</p>
+                        <div class="notes">
+                            <ul class="notes-list">
+                                <li>1) Batu Cave</li>
+                                <li>2) Awana Skyway (Genting Highlands)</li>
+                                <li>3) King's Palace</li>
+                                <li>4) National Monument</li>
+                                <li>5) National Museum</li>
+                                <li>6) Thean Hou Temple</li>
+                                <li>7) Chocolate Boutique</li>
+                                <li>8) Jalan Alor (Dinner)</li>
+                            </ul>
+                        </div>
                         <img src="assets/kl_batu.jpg" alt="Batu Caves" class="timeline-img" loading="lazy">
                     </div>
                     <div class="timeline-item">
                         <span class="time">18:00 – 22:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Petronas+Twin+Towers+Kuala+Lumpur" target="_blank" class="map-link">Kuala Lumpur Night Tour</a></h3>
-                        <p class="notes">KL landmarks and city lights</p>
-                        <img src="assets/kl_towers.jpg" alt="Kuala Lumpur Skyline" class="timeline-img" loading="lazy">
-                    </div>
-                </div>
-                <div class="info-grid" style="margin-top: 2rem;">
-                    <div class="info-card" style="grid-column: 1 / -1;">
-                        <h3>📍 Main Tour Stops</h3>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=Batu+Caves+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">Batu Caves</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=Awana+Skyway+Genting" target="_blank" style="color:inherit;text-decoration:none;">Awana Skyway</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=Istana+Negara+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">King's Palace</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=National+Monument+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">National Monument</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=National+Museum+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">National Museum</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=Thean+Hou+Temple+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">Thean Hou Temple</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=Petaling+Street+Chinatown+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">Chinatown</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=Central+Market+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">Central Market</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=Dataran+Merdeka+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">Dataran Merdeka</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=KL+Tower+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">KL Tower</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=Petronas+Twin+Towers+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">Petronas Twin Towers</a></span>
-                            <span class="badge" style="font-size:0.85rem; padding: 0.25rem 0.75rem;"><a href="https://maps.google.com/?q=Saloma+Link+Bridge+Kuala+Lumpur" target="_blank" style="color:inherit;text-decoration:none;">Saloma Bridge</a></span>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Petronas+Twin+Towers+Kuala+Lumpur" target="_blank" class="map-link">Night Tour</a></h3>
+                        <div class="notes">
+                            <ul class="notes-list">
+                                <li>1) Chinatown</li>
+                                <li>2) Sri Maha Mariamman Temple</li>
+                                <li>3) Central Market</li>
+                                <li>4) River of Life</li>
+                                <li>5) Dataran Merdeka</li>
+                                <li>6) KL Tower</li>
+                                <li>7) Twin Tower</li>
+                                <li>8) Symphony Lake Water Show</li>
+                                <li>9) Saloma Bridge Night View</li>
+                            </ul>
                         </div>
+                        <img src="assets/kl_towers.jpg" alt="Kuala Lumpur Skyline" class="timeline-img" loading="lazy">
                     </div>
                 </div>
             </section>
@@ -703,28 +716,23 @@
                 <div class="timeline">
                     <div class="timeline-item">
                         <span class="time">07:00 – 08:00</span>
-                        <h3 class="activity">Breakfast + Morning Walk</h3>
-                        <p class="notes">Final day</p>
+                        <h3 class="activity">Breakfast, Morning Walk</h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">08:00 – 10:00</span>
-                        <h3 class="activity">Mall Tours + Souvenir Shopping</h3>
-                        <p class="notes">Last-minute purchases</p>
+                        <h3 class="activity">Mall Tours, Souvenirs, Preparation for Departure</h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">10:00 – 12:00</span>
-                        <h3 class="activity">Lunch</h3>
-                        <p class="notes">Final Malaysian meal</p>
+                        <h3 class="activity">Find Good Lunch</h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">12:00 – 13:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Kuala+Lumpur+International+Airport" target="_blank" class="map-link">Travel to Airport</a></h3>
-                        <p class="notes">Allocate extra time</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Kuala+Lumpur+International+Airport" target="_blank" class="map-link">Going to Airport</a></h3>
                     </div>
                     <div class="timeline-item">
                         <span class="time">13:00 – 17:00</span>
-                        <h3 class="activity"><a href="https://maps.google.com/?q=Kuala+Lumpur+International+Airport" target="_blank" class="map-link">Immigration + Boarding</a></h3>
-                        <p class="notes">Departure to Cebu. End of trip!</p>
+                        <h3 class="activity"><a href="https://maps.google.com/?q=Kuala+Lumpur+International+Airport" target="_blank" class="map-link">Immigration, Boarding Time, Departure to cebu</a></h3>
                     </div>
                 </div>
             </section>
@@ -949,4 +957,3 @@
     </script>
 </body>
 </html>
-
